@@ -1,0 +1,22 @@
+// Connecting your SCSS files
+@import "./helpers/mixins";
+@import "./helpers/variables";
+
+// Base
+@import "./base/fonts";
+@import "./base/base";
+
+// Layout
+@import "./layout/header";
+@import "./layout/footer";
+@import "./layout/hero";
+@import "./layout/hamburger";
+@import "./layout/merch-slider";
+@import "./layout/clients-logos";
+@import "./layout/hot-news";
+@import "./layout/blog";
+@import "./layout/about-us";
+
+
+
+

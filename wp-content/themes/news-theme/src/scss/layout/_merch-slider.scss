@@ -1,0 +1,217 @@
+.merch {
+    background: $black;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: relative;
+    @media screen and (max-width: 475px) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    // .container {
+    //     max-width: 1200px;
+    //     margin: 0 auto;
+    //     padding: 0 15px;
+    // }
+
+
+    &-bg {
+        position: absolute;
+        top: 47%;
+        transform: translateY(-53%);
+        width: 100%;
+        display: block;
+    }
+
+    &-title {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 44px;
+        line-height: 58px;
+        color: $blue;
+        margin-top: 0;
+        margin-bottom: 30px;
+        max-width: 930px;
+        &::after {
+            content: '.';
+            color: $white;
+        }
+        @media screen and (max-width: 475px) {
+            font-size: 36px;
+            line-height: 42px;
+        }
+    }
+
+    &-text {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        color: $gray;
+        margin-top: 0;
+        margin-bottom: 55px;
+        max-width: 240px;
+        @media screen and (max-width: 475px) {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 40px;
+        }
+        
+    }
+
+    &-slider {
+        overflow: hidden;
+     
+        max-width: 930px;
+
+        &-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 60px;
+        }
+        &-buttons {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+        & > .swiper-wrapper {
+            background: $dark;
+            margin-bottom: 50px;
+        }
+    }
+    .swiper-pagination {
+        position: unset;
+    }
+    .swiper-button-prev {
+        margin-right: 48px;
+        @media screen and (max-width: 700px) {
+            margin-right: 24px;
+        }
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        position: unset;
+
+        &::after {
+            content: "";
+        }
+        &.swiper-button-disabled {
+            opacity: 1;
+            svg path {
+                fill: #2E0A05;
+               
+            }
+        }
+        @media screen and (max-width: 700px) {
+            svg {
+                width: 16px;
+            }
+        }
+    }
+
+    .swiper-pagination-bullet {
+        margin-right: 12px;
+        height: 18px;
+        width: 18px;
+        border: 1px solid white;
+        opacity: 1;
+        &:last-child {
+            margin-right: 0;
+        }
+        @media screen and (max-width: 700px) {
+            height: 15px;
+            width: 15px;
+        }
+      
+    }
+    .swiper-pagination-bullet-active {
+        border: 1px solid $blue;
+        background: $blue;
+    }
+
+
+    &-slider-item {
+        padding-top: 47px;
+        padding-bottom: 47px;
+        padding-right: 50px;
+        display: flex;
+        justify-content: space-between;
+        background: $dark;
+        @media screen and (max-width: 1200px)  {
+            padding-right: 0;
+        }
+        @media screen and (max-width: 767px) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        @media screen and (max-width: 700px) {
+           flex-direction: column-reverse;
+           padding-top: 0;
+           padding-bottom: 10px;
+        }
+
+        &-title {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 38px;
+            color: $white;
+            margin-top: 24px;
+            margin-bottom: 64px;
+            @media screen and (max-width: 767px) {
+                margin-bottom: 24px;
+            }
+            @media screen and (max-width: 700px) {
+                font-size: 18px;
+                line-height: 24px;
+            }
+            
+            
+        }
+    }
+
+    &-slider-right {
+        padding: 50px 40px;
+        @media screen and (max-width: 767px) {
+            padding: 20px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &-slider-left {
+        padding-left: 29px;
+        @media screen and (max-width: 700px) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        p {
+            margin-top: 0;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 27px;
+            color: $gray;
+            max-width: 426px;
+            margin-bottom: 27px;
+            @media screen and (max-width: 1200px) {
+                font-size: 16px;
+                line-height: 22px;
+                margin-bottom: 20px;
+            }
+            @media screen and (max-width: 700px) {
+                max-width: unset;
+                margin-bottom: 16px;
+
+            }
+        }
+    }
+}

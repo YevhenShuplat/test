@@ -1,0 +1,68 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 1em 0 .5em;
+}
+// h1{
+//     // font-weight: $h1-font-weight;
+//     font-weight: normal;
+// }
+// h2{
+//     font-weight: $h2-font-weight;
+// }
+// h3 {
+//     font-weight: $h3-font-weight;
+// }
+// h4 {
+//     font-weight: $h4-font-weight;
+// }
+// h5 {
+//     font-weight: $h5-font-weight;
+// }
+
+ul {
+	list-style: none;
+}
+hr {
+    width: 100%;
+    margin: 19px 0;
+}
+
+// b,
+// strong {
+//     font-weight: $font-weight-bold;
+// }
+
+// a:not(.nav-link):not(.btn) {
+//     color: $white;
+//     text-decoration: underline;
+//     &:hover {
+//         color: $red;
+//     }
+//     &:visited {
+//         color: $white;
+//     }
+//     &:active {
+//         color: $white-56;
+//     }
+// }
+// .single-blog {
+//     .page-content {
+//         a:not(.nav-link) {
+//             color: $blue;
+//             text-decoration: underline;
+//             &:hover {
+//                 color: $red;
+//             }
+//             &:visited {
+//                 color: $red;
+//             }
+//             &:active {
+//                 color: $blue;
+//             }
+//         }
+//     }
+// }
