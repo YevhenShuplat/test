@@ -1,0 +1,7 @@
+body.wp-admin #about-us,
+body.wp-admin #clients,
+body.wp-admin #hot-news,
+body.wp-admin .merch
+{
+    display: none;
+}

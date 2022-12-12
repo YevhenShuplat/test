@@ -1,11 +1,9 @@
 
 <?php 
-$show_hot_news_section = get_field('show_hot_news_section');
-$hot_news_title = get_field('hot_news_title');
-$hot_news_text = get_field('hot_news_text');
-$hot_news = get_field('choose_hot_news');
+$hot_news_title = get_field('hot_news_title', $atts['id']);
+$hot_news_text = get_field('hot_news_text', $atts['id']);
+$hot_news = get_field('choose_hot_news', $atts['id']);
 
-if(!$show_hot_news_section) return;
     
 ?>
 <section id="hot-news" class="hot-news">
