@@ -1,10 +1,8 @@
 <?php
-$show_clients_logos_section = get_field('show_clients_logos_section');
-$clients_section_title = get_field('clients_section_title');
-$choose_logos = get_field('choose_logos');
+$clients_section_title = get_field('clients_section_title', $atts['id']);
+$choose_logos = get_field('choose_logos', $atts['id']);
 
-
-if (!$show_hot_news_section) return; ?>
+?>
 <section id="clients" class="clients">
     <div class="container">
         <div class="clients-inner">

@@ -90,3 +90,133 @@ function hide_taxonomy_archive($qry)
         $qry->set_404();
     }
 }
+
+
+
+/**
+ * Register all shortcodes
+ *
+ * @return null
+ */
+function register_shortcodes()
+{
+    add_shortcode('hot_news', 'shortcode_hot_news');
+    add_shortcode('merch_section', 'shortcode_merch_section');
+    add_shortcode('clients_section', 'shortcode_chients_section');
+    add_shortcode('about_section', 'shortcode_about_section');
+}
+add_action('init', 'register_shortcodes');
+
+/**
+ * HotNews Shortcode Callback
+ * 
+ * @param Array $atts
+ *
+ * @return string
+ */
+function shortcode_hot_news($atts)
+{
+
+    $atts = shortcode_atts(array(
+        'id' => '',
+    ), $atts);
+
+    if (empty($atts['id'])) {
+        echo 'Add id or shortcode id';
+    }
+    include get_template_directory() . '/template-parts/hot-news.inc.php';
+}
+
+/**
+ * Merch Shortcode Callback
+ * 
+ * @param Array $atts
+ *
+ * @return string
+ */
+function shortcode_merch_section($atts)
+{
+
+    $atts = shortcode_atts(array(
+        'id' => '',
+    ), $atts);
+
+    if (empty($atts['id'])) {
+        echo 'Add id or shortcode id';
+    }
+    include get_template_directory() . '/template-parts/merch.inc.php';
+}
+/**
+ * Clients Logos Shortcode Callback
+ * 
+ * @param Array $atts
+ *
+ * @return string
+ */
+function shortcode_chients_section($atts)
+{
+
+    $atts = shortcode_atts(array(
+        'id' => '',
+    ), $atts);
+
+    if (empty($atts['id'])) {
+        echo 'Add id or shortcode id';
+    }
+    include get_template_directory() . '/template-parts/clients-logos.inc.php';
+}
+/**
+ * About Us Section Shortcode Callback
+ * 
+ * @param Array $atts
+ *
+ * @return string
+ */
+function shortcode_about_section($atts)
+{
+
+    $atts = shortcode_atts(array(
+        'id' => '',
+    ), $atts);
+
+    if (empty($atts['id'])) {
+        echo 'Add id or shortcode id';
+    }
+    include get_template_directory() . '/template-parts/about-us.inc.php';
+}
+
+// Add the custom columns to the custom_shortcodes post type:
+add_filter('manage_custom_shortcodes_posts_columns', 'set_custom_edit_custom_shortcodes_columns');
+function set_custom_edit_custom_shortcodes_columns($columns)
+{
+    $columns['c_shortcode'] = __('Code', 'news-test');
+
+    return $columns;
+}
+
+// Add the data to the custom columns for the custom_shortcodes post type:
+add_action('manage_custom_shortcodes_posts_custom_column', 'custom_custom_shortcodes_column', 10, 2);
+function custom_custom_shortcodes_column($column, $post_id)
+{
+    if ($column == 'c_shortcode') {
+        $type =  get_field('select_type_of_shortcode', $post_id);
+        switch ($type) {
+
+            case 'hot_news_section':
+                echo '<input type="text" value="[hot_news id=' . $post_id . ']" />';
+                break;
+
+            case 'merch_section':
+                echo '<input type="text" value="[merch_section id=' . $post_id . ']" />';
+                break;
+
+            case 'logos_section':
+                echo '<input type="text" value="[clients_section id=' . $post_id . ']" />';
+                break;
+
+            case 'about_section':
+                echo '<input type="text" value="[about_section id=' . $post_id . ']" />';
+                break;
+        }
+    }
+}

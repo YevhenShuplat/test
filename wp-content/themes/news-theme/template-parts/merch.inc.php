@@ -1,7 +1,7 @@
 <?php
-$merch_section_title = get_field('merch_section_title');
-$merch_section_description = get_field('merch_section_description');
-$choose_merch = get_field('choose_merch');
+$merch_section_title = get_field('merch_section_title', $atts['id']);
+$merch_section_description = get_field('merch_section_description', $atts['id']);
+$choose_merch = get_field('choose_merch', $atts['id']);
 
 ?>
 
@@ -41,8 +41,8 @@ $choose_merch = get_field('choose_merch');
                             <div class="swiper-slide">
                                 <div class="merch-slider-item">
                                     <div class="merch-slider-left">
-                                        <h4 class="merch-slider-item-title"><?php echo get_field('title'); ?></h4>
-                                        <?php echo get_field('merch_description'); ?>
+                                        <h4 class="merch-slider-item-title"><?php echo get_field('title',$post->ID); ?></h4>
+                                        <?php echo get_field('merch_description',$post->ID); ?>
                                     </div>
                                     <div class="merch-slider-right">
                                         <img src="<?php echo get_the_post_thumbnail_url($post->ID, 'large'); ?>">

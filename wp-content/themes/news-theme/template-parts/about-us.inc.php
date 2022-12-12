@@ -1,10 +1,8 @@
 <?php
-$show_about_us_section = get_field('show_about_us_section');
-$about_us_title = get_field('about_us_title');
-$about_us_content = get_field('about_us_content');
+$about_us_title = get_field('about_us_title', $atts['id']);
+$about_us_content = get_field('about_us_content', $atts['id']);
 
-
-if (!$show_about_us_section) return; ?>
+?>
 
 <section id="about-us" class="about-us">
     <div class="container">

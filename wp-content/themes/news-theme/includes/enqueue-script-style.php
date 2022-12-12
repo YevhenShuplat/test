@@ -10,6 +10,11 @@ function include_css_files()
     wp_enqueue_style('style', get_stylesheet_directory_uri() . '/includes/css/main.css', array(), null, false);
 }
 
+add_action( 'admin_enqueue_scripts', 'load_admin_style' );
+function load_admin_style() {
+    wp_enqueue_style('admin-style', get_stylesheet_directory_uri() . '/includes/css/admin-main.css', array(), null, false);
+}
+
 /**
  * The function include a javascript files
  */
